@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Early Birthday Surprise for Tayyaba! ✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffeef8 0%, #ffdaec 100%);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* Flower / Emoji Rain Canvas */
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(231, 112, 172, 0.25);
+            text-align: center;
+            max-width: 550px;
+            width: 90%;
+            z-index: 2;
+            border: 3px solid #ffb7dd;
+            transform: scale(0.95);
+            animation: bounceIn 0.8s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes bounceIn {
+            to { transform: scale(1); }
+        }
+
+        .advance-badge {
+            background: #ff4081;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(255, 64, 129, 0.3);
+        }
+
+        .main-title {
+            font-family: 'Fredoka One', cursive;
+            color: #d63384;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Styling */
+        .birthday-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 15px;
+            margin: 15px 0 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .gift-box {
+            font-size: 4.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff4081, #ff80ab);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+            transition: 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.6);
+        }
+
+        .wishes-container {
+            display: none;
+            margin-top: 25px;
+            text-align: left;
+            background: #fff5fa;
+            padding: 25px;
+            border-radius: 16px;
+            border-left: 6px solid #ff4081;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .wishes-container p {
+            color: #495057;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .emoji-line {
+            text-align: center;
+            font-size: 1.6rem;
+            margin: 15px 0;
+            letter-spacing: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="card">
+        <span class="advance-badge">⏰ BREAKING THE TIMELINE! ⏰</span>
+        <div class="gift-box" id="giftIcon">🎁</div>
+        <h1 class="main-title">Surprise, Tayyaba! 🌸✨</h1>
+        <div class="subtitle">🚨 ADVANCE BIRTHDAY DETECTED! 🚨</div>
+        
+        <!-- Verbatim reference to your image file -->
+        <img src="happy-birthday-my-dearest-friend-260nw-1460397809.webp" alt="Happy Birthday My Dearest Friend" class="birthday-img">
+
+        <p style="color: #555; margin-bottom: 25px; font-size: 1.05rem; line-height: 1.5;">
+            I know, I know... your big day isn't until <strong>September 27th</strong>! But who says we have to wait for the calendar to tell us when to celebrate the best person ever? I wanted to be the absolute first one! 💖
+        </p>
+
+        <button class="btn" id="revealBtn">👉 Click for the Real Shock! 👈</button>
+
+        <div class="wishes-container" id="wishesBox">
+            <div class="emoji-line">🎉🥳🎂💃🎈✨💮</div>
+            <p><strong>Dearest Tayyaba, 💖</strong></p>
+            
+            <p>Yes, I am wishing you **super early**, and I am completely unashamed of it! Normal birthday wishes on the actual day are way too mainstream. A best friend as incredible, rare, and wonderful as you deserves an extra-long celebration! 🌟🌍</p>
+            
+            <p>Consider this website your early birthday VIP pass. I wanted to catch you totally by surprise and make you smile before the September rush even begins. 🌺🍰</p>
+            
+            <p>May this upcoming year start bringing you blessings, endless laughter, and beautiful memories right from this very moment. Thank you for being the brightest spark in my life. 🌸🎈🎁</p>
+            
+            <div class="emoji-line">🌷🌻💐❤️💖✨🌸</div>
+            <p style="text-align: center; font-weight: bold; color: #ff4081; font-size: 1.2rem; margin-top: 15px;">
+                Happy Birthday in Advance, My Dearest Friend! 🥳💌
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const revealBtn = document.getElementById('revealBtn');
+        const wishesBox = document.getElementById('wishesBox');
+        const giftIcon = document.getElementById('giftIcon');
+
+        let animationId;
+        const items = [];
+        const pool = ['🌸', '💮', '🌷', '🌺', '🌻', '💐', '✨', '💖', '🎈', '🎉'];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class FallingItem {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * -canvas.height;
+                this.char = pool[Math.floor(Math.random() * pool.length)];
+                this.size = Math.random() * 20 + 20;
+                this.speed = Math.random() * 2 + 1.5;
+                this.angle = Math.random() * 360;
+                this.spin = Math.random() * 2 - 1;
+            }
+            update() {
+                this.y += this.speed;
+                this.angle += this.spin;
+                if (this.y > canvas.height) {
+                    this.y = -50;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle * Math.PI / 180);
+                ctx.font = `${this.size}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.fillText(this.char, 0, 0);
+                ctx.restore();
+            }
+        }
+
+        // Background flower elements
+        for (let i = 0; i < 35; i++) {
+            items.push(new FallingItem());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            items.forEach(item => {
+                item.update();
+                item.draw();
+            });
+            animationId = requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Shock explosion & reveal logic
+        revealBtn.addEventListener('click', () => {
+            wishesBox.style.display = 'block';
+            revealBtn.style.display = 'none';
+            giftIcon.innerHTML = '🥳';
+            giftIcon.style.animation = 'none';
+            
+            // Explosion of flowers for shock effect!
+            for (let i = 0; i < 50; i++) {
+                let burstItem = new FallingItem();
+                burstItem.y = Math.random() * (canvas.height / 1.5);
+                items.push(burstItem);
+            }
+        });
+    </script>
+</body>
+</html>
